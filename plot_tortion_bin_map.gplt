@@ -1,0 +1,13 @@
+p 'GRID_ASSIGNATION2_all' u 1:2:3 pt 5 ps 0.7 palette
+set xrange [-180:180]
+set yrange [-180:180]
+set grid
+set xtics 45
+set ytics 45
+set xlabel 'phi'
+set ylabel 'psi'
+set font 'Helvetica-Bold'
+unset colorbox
+set size ratio 1
+replot
+
