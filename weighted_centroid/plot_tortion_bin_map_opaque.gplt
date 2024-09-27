@@ -1,0 +1,43 @@
+#!/usr/bin/gnuplot 
+
+set encoding iso_8859_1
+#set terminal png transparent truecolor
+set terminal postscript eps enhanced color dl 2.0 size 3.0,3.0  "Helvetica" 24 lw 2
+set out "Tortion_bin_map_opaque.eps"
+#set xlabel 'phi' 
+#set ylabel 'psi' 
+unset xlabel
+unset ylabel
+set xrange [-180:180] 
+set yrange [-180:180] 
+set xtics 90 
+set ytics 90
+#unset xtics
+#unset ytics
+set key off
+#set grid
+
+set font 'Helvetica-Bold'
+unset colorbox
+set size ratio 1 
+
+set palette defined ( 1 '#229954',\
+2 '#E74C3C',\
+3 '#FADBD8',\
+4 '#ABEBC6',\
+5 '#9A7D0A')
+#7 '#b37400',\
+#8 '#ffa500',\
+#9 '#ffdf00',\
+#10 '#ffff00')
+
+#set palette defined ( 1 '#FF0000',\
+#2 '#FFA500',\
+#3 '#FFFF00',\
+#4 '#00FF00',\
+#5 '#0000FF',\
+#6 '#A020F0')
+
+p 'GRID_ASSIGNATION2_all' u 1:2:3 pt 5 ps 0.5 lw 2 palette
+
+!convert -density 300 Tortion_bin_map_opaque.eps Tortion_bin_map_opaque.png
